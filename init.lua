@@ -86,12 +86,12 @@ P.S. You can delete this when you're done too. It's your config now! :)
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+--  NOTE: Must happen before plugins are ed (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -230,9 +230,9 @@ require('lazy').setup({
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
-  -- keys can be used to configure plugin behavior/loading/etc.
+  -- keys can be used to configure plugin behavior/ing/etc.
   --
-  -- Use `opts = {}` to force a plugin to be loaded.
+  -- Use `opts = {}` to force a plugin to be ed.
   --
   --  This is equivalent to:
   --    require('Comment').setup({})
@@ -258,25 +258,25 @@ require('lazy').setup({
     },
   },
 
-  -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
+  -- NOTE: Plugins can also be configured to run Lua code when they are ed.
   --
   -- This is often very useful to both group configuration, as well as handle
-  -- lazy loading plugins that don't need to be loaded immediately at startup.
+  -- lazy ing plugins that don't need to be loaded immediately at startup.
   --
   -- For example, in the following configuration, we use:
   --  event = 'VimEnter'
   --
-  -- which loads which-key before all the UI elements are loaded. Events can be
+  -- which s which-key before all the UI elements are loaded. Events can be
   -- normal autocommands events (`:help autocmd-events`).
   --
   -- Then, because we use the `config` key, the configuration only runs
-  -- after the plugin has been loaded:
+  -- after the plugin has been ed:
   --  config = function() ... end
 
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
-    event = 'VimEnter', -- Sets the loading event to 'VimEnter'
-    config = function() -- This is the function that runs, AFTER loading
+    event = 'VimEnter', -- Sets the ing event to 'VimEnter'
+    config = function() -- This is the function that runs, AFTER ing
       require('which-key').setup()
 
       -- Document existing key chains
@@ -311,7 +311,7 @@ require('lazy').setup({
         build = 'make',
 
         -- `cond` is a condition used to determine whether this plugin should be
-        -- installed and loaded.
+        -- installed and ed.
         cond = function()
           return vim.fn.executable 'make' == 1
         end,
@@ -361,8 +361,8 @@ require('lazy').setup({
       }
 
       -- Enable Telescope extensions if they are installed
-      pcall(require('telescope').load_extension, 'fzf')
-      pcall(require('telescope').load_extension, 'ui-select')
+      pcall(require('telescope')._extension, 'fzf')
+      pcall(require('telescope')._extension, 'ui-select')
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
@@ -658,7 +658,7 @@ require('lazy').setup({
           -- {
           --   'rafamadriz/friendly-snippets',
           --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
+          --     require('luasnip.ers.from_vscode').lazy_load()
           --   end,
           -- },
         },
@@ -746,10 +746,10 @@ require('lazy').setup({
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     'folke/tokyonight.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
+    priority = 1000, -- Make sure to  this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
+      -- Like many other themes, this one has different styles, and you could 
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
       vim.cmd.colorscheme 'tokyonight-night'
 
@@ -829,8 +829,8 @@ require('lazy').setup({
     end,
   },
 
-  -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
-  -- init.lua. If you want these files, they are in the repository, so you can just download them and
+  -- The following two comments only work if you have downed the kickstart repo, not just copy pasted the
+  -- init.lua. If you want these files, they are in the repository, so you can just down them and
   -- place them in the correct locations.
 
   -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
@@ -847,7 +847,7 @@ require('lazy').setup({
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
